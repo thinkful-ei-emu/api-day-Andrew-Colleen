@@ -5,15 +5,13 @@ let api = (function() {
 
   function getItems() {
     return fetch(`${BASE_URL}/items`)
-      .then(res => {
-        return res;
-      });
+      .then(res => res);
     // return Promise.resolve('A successful response.');
   }
 
-  function createItem(name){
-    const shoppingItem = {name};
-    JSON.stringify(shoppingItem);
+  function createItem(name) {
+    const shoppingItem = { name };
+    // JSON.stringify(shoppingItem);
     return fetch(`${BASE_URL}/items`, 
       { method: 'POST',
         headers: {'Content-Type': 'application/json'},

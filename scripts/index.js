@@ -3,7 +3,17 @@
 // eslint-disable-next-line no-unused-vars
 $(document).ready(function() {
   shoppingList.bindEventListeners();
-  shoppingList.render();
+  // shoppingList.render();
+  api.getItems()
+    .then(res => res.json())
+    .then((items) => {
+      items.forEach((item) => {
+        // console.log(item);
+        store.addItem(item);
+      });
+      // console.log(store.items);
+      shoppingList.render();
+    });
 });
 
 store.items.push(Item.create('apples'));
@@ -17,6 +27,7 @@ store.items.push(Item.create('apples'));
 //   .then(resJson => {
 //     console.log(resJson, 'resJson');
 //   });
+
 // api.createItem('pears')
 //   .then(res => res.json())
 //   .then((newItem)=> {
@@ -26,3 +37,4 @@ store.items.push(Item.create('apples'));
 //   .then((items)=> {
 //     console.log(items);
 //   });
+
