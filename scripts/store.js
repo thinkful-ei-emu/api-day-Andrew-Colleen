@@ -2,10 +2,17 @@
 /* global Item */
 // eslint-disable-next-line no-unused-vars
 const store = (function(){
+
+  /**
+   * Updates the item with matching id with newData in store.items
+   * 
+   * @param {string} id 
+   * @param {object} newData 
+   */
   const findAndUpdate = function(id, newData){
     const item = this.findById(id);
-    const updatedItem = Object.assign(item, newData);
-    console.log(updatedItem);
+    Object.assign(item, newData);
+    // console.log(updatedItem);
   };
   
   const addItem = function(item) {
