@@ -1,5 +1,5 @@
 'use strict';
-/* global shoppingList, store, Item, api */
+/* global shoppingList, store, Item, api, $ */
 // eslint-disable-next-line no-unused-vars
 $(document).ready(function() {
   shoppingList.bindEventListeners();
@@ -16,7 +16,7 @@ $(document).ready(function() {
     });
 });
 
-store.items.push(Item.create('apples'));
+// store.items.push(Item.create('apples'));
 
 // console.log(api.BASE_URL, 'test');
 
@@ -28,14 +28,26 @@ store.items.push(Item.create('apples'));
 //     console.log(resJson, 'resJson');
 //   });
 
-api.createItem('pears')
+// api.createItem('pears')
+//   .then(res => res.json())
+//   .then((newItem)=> {
+//     console.log(newItem);
+//     return api.getItems();
+//   })
+//   .then(res => res.json())
+//   .then((items)=> {
+//     console.log(items);
+//   });
+
+api.getItems()
   .then(res => res.json())
-  .then((newItem)=> {
-    console.log(newItem);
-    return api.getItems();
+  .then((items) => {
+    // console.log(items);
+    const item = items[0];
+    console.log(item.name, item.id);
+    return api.updateItem(item.id, { name: 'foobar' });
   })
   .then(res => res.json())
-  .then((items)=> {
-    console.log(items);
+  .then((resJson) => {
+    console.log('updated!', resJson);
   });
-
