@@ -17,3 +17,12 @@ store.items.push(Item.create('apples'));
 //   .then(resJson => {
 //     console.log(resJson, 'resJson');
 //   });
+// api.createItem('pears')
+//   .then(res => res.json())
+//   .then((newItem)=> {
+//     return api.getItems();
+//   })
+//   .then(res => res.json())
+//   .then((items)=> {
+//     console.log(items);
+//   });

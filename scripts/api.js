@@ -11,8 +11,19 @@ let api = (function() {
     // return Promise.resolve('A successful response.');
   }
 
+  function createItem(name){
+    const shoppingItem = {name};
+    JSON.stringify(shoppingItem);
+    return fetch(`${BASE_URL}/items`, 
+      { method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(shoppingItem)
+      });
+  }
+
   return {
-    getItems
+    getItems,
+    createItem
   };
 })();
 
