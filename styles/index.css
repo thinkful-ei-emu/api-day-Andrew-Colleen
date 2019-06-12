@@ -6,6 +6,30 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.error-message-box {
+  /* display: none; */
+  /* hidden; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  text-align: right;
+  top: 50px;
+  right:50px;
+  padding: 5px;
+  border: 1px solid red;
+}
+#error-message-area {
+  display: inline-block;
+  color: red;
+}
+#close-error-button {
+  /* display: inline-block; */
+  text-align: center;
+  margin-right: 5px;
+}
+
+
 button, input[type="text"] {
   padding: 5px;
 }
@@ -29,6 +53,8 @@ button:hover:disabled {
 .container {
   max-width: 600px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .shopping-list {

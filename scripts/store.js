@@ -45,13 +45,15 @@ const store = (function(){
     items: [],
     hideCheckedItems: false,
     searchTerm: '',
+    showError: false,
+    errorMessage: '',
     findAndUpdate,
     addItem,
     findById,
     findAndDelete,
     toggleCheckedFilter,
     setSearchTerm,
-    setItemIsEditing,
+    setItemIsEditing
   };
   
 }());

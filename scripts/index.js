@@ -5,7 +5,7 @@ $(document).ready(function() {
   shoppingList.bindEventListeners();
   // shoppingList.render();
   api.getItems()
-    .then(res => res.json())
+    // .then(res => res.json())
     .then((items) => {
       items.forEach((item) => {
         // console.log(item);
