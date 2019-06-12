@@ -39,15 +39,18 @@ $(document).ready(function() {
 //     console.log(items);
 //   });
 
-api.getItems()
-  .then(res => res.json())
-  .then((items) => {
-    // console.log(items);
-    const item = items[0];
-    console.log(item.name, item.id);
-    return api.updateItem(item.id, { name: 'foobar' });
-  })
-  .then(res => res.json())
-  .then((resJson) => {
-    console.log('updated!', resJson);
-  });
+// api.getItems()
+//   .then(res => res.json())
+//   .then((items) => {
+//     // console.log(items);
+//     const item = items[0];
+//     console.log(item.name, item.id);
+//     return api.updateItem(item.id, { name: 'potato' });
+//   })
+//   .then(res => res.json())
+//   .then(() => {
+//     const item = store.items[0];
+//     console.log('current name: ' + item.name);
+//     store.findAndUpdate(item.id, { name: 'foobar' });
+//     console.log('new name: ' + item.name);
+//   });
