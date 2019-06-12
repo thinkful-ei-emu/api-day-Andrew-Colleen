@@ -28,13 +28,14 @@ store.items.push(Item.create('apples'));
 //     console.log(resJson, 'resJson');
 //   });
 
-// api.createItem('pears')
-//   .then(res => res.json())
-//   .then((newItem)=> {
-//     return api.getItems();
-//   })
-//   .then(res => res.json())
-//   .then((items)=> {
-//     console.log(items);
-//   });
+api.createItem('pears')
+  .then(res => res.json())
+  .then((newItem)=> {
+    console.log(newItem);
+    return api.getItems();
+  })
+  .then(res => res.json())
+  .then((items)=> {
+    console.log(items);
+  });
 
