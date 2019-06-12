@@ -28,11 +28,23 @@ let api = (function() {
       body: JSON.stringify(updateData)
     });
   }
+  
+  function deleteItem(id) {
+    const deletedItem = {id};
+    return fetch(`${BASE_URL}/items/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(deletedItem)
+    });
+  }
 
   return {
     getItems,
     createItem,
-    updateItem
+    updateItem,
+    deleteItem
   };
 })();
 
